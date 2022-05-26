@@ -1,17 +1,12 @@
 import PropTypes from 'prop-types';
 import Header from './Header';
-export default function Page({ children, cool }) {
-    return (<>
-        <Header />
-        <h1>Hello World</h1>
-        <p>Test</p>
-    </>)
+import Head from 'next/head';
+export default function Page({ children }) {
+    return (
+        <>
+            {children}
+        </>
+    )
 }
 
 
-
-
-Page.propTypes = {
-    cool: PropTypes.string,
-    children: PropTypes.any
-}    

@@ -1,10 +1,16 @@
-import Page from '../components/Page';
+import Router from 'next/router';
+import Head from 'next/head';
 
-
-export default function MyApp({ Component, pageProps }){
+function MyApp({ Component, pageProps }) {
     return (
-        <Page>
-        <Component {...pageProps} />
-        </Page>
+        <>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </>
     )
 }
+export default MyApp;
+
+
+

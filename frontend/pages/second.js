@@ -1,9 +1,7 @@
-import Page from '../components/Page';
-
-export default function SecondPage() {
+export default function Second() {
     return (
-        <Page>
-            <p>From <b>Second Page</b></p>
-        </Page>
+        <div>
+            <b>Second</b>
+        </div>
     )
 }

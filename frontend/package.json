@@ -2,14 +2,14 @@
   "name": "react-dishes",
   "version": "0.1.0",
   "main": "index.js",
-    "scripts": {
-      "dev": "next -p 7777",
-      "build": "next build",
-      "start": "next start -p 7777",
-      "test": "NODE_ENV=test jest --watch",
-      "lint": "eslint .",
-      "lint:fix": "eslint . --fix"
-    },
+  "scripts": {
+    "dev": "next -p 7777",
+    "build": "next build",
+    "start": "next start -p 7777",
+    "test": "NODE_ENV=test jest --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

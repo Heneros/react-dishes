@@ -1,9 +1,6 @@
-import Page from "../components/Page"
-export default function IndexPage({children}){
-    return <div>
-        <Page>
-            {children}
-        </Page>
-       
-    </div>
+export default function IndexPage() {
+    return (<div>
+ 
+        <b>IndexPage</b>
+    </div>)
 }
