@@ -4,6 +4,7 @@ import Head from 'next/head';
 export default function Page({ children }) {
     return (
         <>
+        <Header/>
             {children}
         </>
     )
