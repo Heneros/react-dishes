@@ -12,17 +12,17 @@ export default function Header() {
     return (
         <HeaderStyles>
             <header>
-                <div class="first__line">
+                <div className="first__line">
                     <Logo><Link href="/">Logo</Link></Logo>
-                    <div class="search__line">
+                    <div className="search__line">
                         <input type="search" placeholder="Enter value" />
                     </div>
-                    <div class="phone__contact">
+                    <div className="phone__contact">
                         45-353459-3
                     </div>
                 </div>
                 <div className='line__separetor'></div>
-                <div class="second__line">
+                <div className="second__line">
                     <Nav />
                 </div>
             </header>

@@ -7,10 +7,15 @@ const GlobalStyles = createGlobalStyle`
          font-weight: normal;
          font-style: normal;
      } 
+     html{
+            box-sizing: border-box;
+     }
       body{
-           font-family: 'gilroy';
-           background-color: #211F20;
-           color: #CFCFCF;
+        font-family: 'gilroy',  --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #211F20;
+        color: #CFCFCF;
+        padding: 0;
+        margin: 0;
    }
    a{ 
         color: #CFCFCF;
