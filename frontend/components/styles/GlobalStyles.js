@@ -13,20 +13,18 @@ const GlobalStyles = createGlobalStyle`
            color: #CFCFCF;
    }
    a{ 
-       color: #CFCFCF;
+        color: #CFCFCF;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-decoration: none;
    }
-   .first__line{
-         display: flex; 
-         justify-content: center;
-   }
-   .navbar{
-           display: flex;
-    justify-content: space-around;
-   }
+
    .container{
        margin: 0 auto;
        max-width: 1290px;
    }
+
 `;
 
 export default GlobalStyles;
