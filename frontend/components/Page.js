@@ -7,8 +7,6 @@ export default function Page({ children }) {
     return (
         <div>
             <div className='container'>
-
-
                 <GlobalStyles />
                 <Header />
                 {children}
