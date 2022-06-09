@@ -6,8 +6,8 @@ It looks at the default export, and expects a Keystone config object.
 You can find all the config options in our docs here: https://keystonejs.com/docs/apis/config
 */
 
-import { config } from '@keystone-6/core';
-
+import { config, list } from '@keystone-6/core';
+import { cloudinaryImage } from '@keystone-6/cloudinary';
 
 
 // Look in the schema file for how we define our lists, and how users interact with them through graphql or the Admin UI
@@ -53,6 +53,7 @@ export default withAuth(
 
     },
     lists,
+
     session,
   })
 );

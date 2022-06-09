@@ -15,8 +15,8 @@ A field: The individual bits of data on your list, each with its own type.
 // Like the `config` function we use in keystone.ts, we use functions
 // for putting in our config so we get useful errors. With typescript,
 // we get these even before code runs.
-import { list } from '@keystone-6/core';
-
+import { list, config } from '@keystone-6/core';
+import 'dotenv/config';
 // We're using some common fields in the starter. Check out https://keystonejs.com/docs/apis/fields#fields-api
 // for the full list of fields.
 import {
@@ -25,6 +25,7 @@ import {
   password,
   timestamp,
   select,
+  image,
   integer,
 } from '@keystone-6/core/fields';
 // The document field is a more complicated field, so it's in its own package
@@ -38,9 +39,22 @@ import { document } from '@keystone-6/fields-document';
 // that Typescript cannot easily infer.
 import { Lists } from '.keystone/types';
 
+import { cloudinaryImage } from '@keystone-6/cloudinary';
+
+import { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_SECRET, CLOUDINARY_API_FOLDER } from './config';
+
+
+// cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+//   apiKey: process.env.CLOUDINARY_KEY,
+//     apiSecret: process.env.CLOUDINARY_SECRET,
+//       folder: '',
 // We have a users list, a blogs list, and tags for blog posts, so they can be filtered.
 // Each property on the exported object will become the name of a list (a.k.a. the `listKey`),
 // with the value being the definition of the list, including the fields.
+
+
+
+
 export const lists: Lists = {
   // Here we define the user list.
   Product: list({
@@ -62,7 +76,19 @@ export const lists: Lists = {
       }),
       price: integer(),
     },
-
+  }),
+  ProductImage: list({
+    fields: {
+      fieldName: cloudinaryImage({
+        cloudinary: {
+          cloudName: CLOUDINARY_CLOUD_NAME,
+          apiKey: CLOUDINARY_API_KEY,
+          apiSecret: CLOUDINARY_SECRET,
+          folder: CLOUDINARY_API_FOLDER,
+        },
+      }),
+      altText: text()
+    },
   }),
   User: list({
     // Here are the fields that `User` will have. We want an email and password so they can log in
