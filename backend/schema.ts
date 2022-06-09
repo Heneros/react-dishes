@@ -25,6 +25,7 @@ import {
   password,
   timestamp,
   select,
+  integer,
 } from '@keystone-6/core/fields';
 // The document field is a more complicated field, so it's in its own package
 // Keystone aims to have all the base field types, but you can make your own
@@ -42,6 +43,27 @@ import { Lists } from '.keystone/types';
 // with the value being the definition of the list, including the fields.
 export const lists: Lists = {
   // Here we define the user list.
+  Product: list({
+    fields: {
+      name: text({ validation: { isRequired: true } }),
+      description: text({ ui: { displayMode: 'textarea' }, }),
+
+      status: select({
+        options: [
+          { label: 'Draft', value: 'DRAFT' },
+          { label: 'Available', value: 'AVAILABLE' },
+          { label: 'Unavailable', value: 'UNAVAILABLE' }
+        ],
+        defaultValue: 'DRAFT',
+        ui: {
+          displayMode: 'segmented-control',
+          createView: { fieldMode: 'hidden' }
+        }
+      }),
+      price: integer(),
+    },
+
+  }),
   User: list({
     // Here are the fields that `User` will have. We want an email and password so they can log in
     // a name so we can refer to them, and a way to connect users to posts.
@@ -129,6 +151,7 @@ export const lists: Lists = {
       }),
     },
   }),
+
   // Our final list is the tag list. This field is just a name and a relationship to posts
   Tag: list({
     ui: {

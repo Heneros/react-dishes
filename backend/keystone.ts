@@ -9,6 +9,7 @@ You can find all the config options in our docs here: https://keystonejs.com/doc
 import { config } from '@keystone-6/core';
 
 
+
 // Look in the schema file for how we define our lists, and how users interact with them through graphql or the Admin UI
 import { lists } from './schema';
 
@@ -22,6 +23,7 @@ import { lists } from './schema';
 
 // Keystone auth is configured separately - check out the basic auth setup we are importing from our auth file.
 import { withAuth, session } from './auth';
+
 import { createAuth } from '@keystone-6/auth';
 
 
@@ -49,10 +51,10 @@ export default withAuth(
         return !!session?.data;
       },
 
-      },
-      lists,
-      session,
-    })
+    },
+    lists,
+    session,
+  })
 );
 
 

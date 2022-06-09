@@ -11,6 +11,14 @@ generator client {
   output   = "node_modules/.prisma/client"
 }
 
+model Product {
+  id          String  @id @default(cuid())
+  name        String  @default("")
+  description String  @default("")
+  status      String? @default("DRAFT")
+  price       Int?
+}
+
 model User {
   id       String @id @default(cuid())
   name     String @default("")
