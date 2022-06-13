@@ -4,13 +4,14 @@
 /backend/node_modules  
 /backend/config.ts  
 /backend/.keystone
+/backend/.env
 # testing
 /coverage   
 # production 
 /build
 
 # misc
-/backend/.env
+
 .DS_Store
 .env.local
 .env.development.local

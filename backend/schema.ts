@@ -60,8 +60,18 @@ export const lists: Lists = {
   Product: list({
     fields: {
       name: text({ validation: { isRequired: true } }),
-      description: text({ ui: { displayMode: 'textarea' }, }),
-
+      description: text({
+        ui: { displayMode: 'textarea' },
+      }),
+      photo: relationship({
+        ref: 'ProductImage.product',
+        ui: {
+          displayMode: 'cards',
+          cardFields: ['image', 'altText'],
+          inlineCreate: { fields: ['image', 'altText'] },
+          inlineEdit: { fields: ['image', 'altText'] }
+        }
+      }),
       status: select({
         options: [
           { label: 'Draft', value: 'DRAFT' },
@@ -79,16 +89,25 @@ export const lists: Lists = {
   }),
   ProductImage: list({
     fields: {
-      fieldName: cloudinaryImage({
+      // image: 
+      image: cloudinaryImage({
         cloudinary: {
           cloudName: CLOUDINARY_CLOUD_NAME,
           apiKey: CLOUDINARY_API_KEY,
           apiSecret: CLOUDINARY_SECRET,
           folder: CLOUDINARY_API_FOLDER,
+
         },
+        label: 'Source'
       }),
-      altText: text()
+      altText: text(),
+      product: relationship({ ref: 'Product.photo' })
     },
+    ui: {
+      listView: {
+        initialColumns: ['image', 'altText', 'product']
+      }
+    }
   }),
   User: list({
     // Here are the fields that `User` will have. We want an email and password so they can log in
