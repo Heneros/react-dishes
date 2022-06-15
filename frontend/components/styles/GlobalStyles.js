@@ -50,7 +50,9 @@ const GlobalStyles = createGlobalStyle`
    .container{
        margin: 0 auto;
        max-width: 1290px;
+       padding: 0 15;
    }
+   
 
 `;
 
