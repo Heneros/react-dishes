@@ -12,10 +12,9 @@ export default function Page({ children, products }) {
                 <Header />
             </div>
             <BannerHomePage />
-            <div className='container'>
-                {children}
-            </div>
 
+                {children}
+     
 
 
 
