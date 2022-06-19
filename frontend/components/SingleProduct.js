@@ -1,7 +1,7 @@
 
 // cl4d7o7980286asb6s5hthjcy
-import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag';
+import { useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!){
@@ -16,7 +16,7 @@ const SINGLE_ITEM_QUERY = gql`
 
 
 
-export default function SingleProduct({ id }) {
+export default function SingleProduct({id}) {
     const { data, loading, error } = useQuery(SINGLE_ITEM_QUERY, {
         variables: {
             id,
@@ -27,5 +27,6 @@ export default function SingleProduct({ id }) {
     const { product } = data;
     return (<p>
         {product.name}
+        {product.description}
     </p>)
 };
