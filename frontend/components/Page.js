@@ -12,12 +12,7 @@ export default function Page({ children, products }) {
                 <Header />
             </div>
             <BannerHomePage />
-
-                {children}
-     
-
-
-
+            {children}
         </div>
     )
 }
