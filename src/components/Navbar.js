@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <ul className='navbar'>
             <li>
-                <Link to="/coldsnacks">ColdSnacks</Link>
+                <Link to="/productscoldsnacks">ColdSnacks</Link>
             </li>
         </ul>
     )

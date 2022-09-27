@@ -3,20 +3,20 @@ import { Route, Routes } from "react-router-dom";
 import Homepage from './components/Homepage';
 import Banner from './components/Banner';
 import Navbar from './components/Navbar';
-import ColdSnacks from './components/ColdSnacks';
-import Information from './components/Information';
-
+import Header from './components/Header';
+import ProductsColdSnacks from './components/ProductsColdSnacks';
+import ProductColdSnacks from './components/ProductColdSnacks';
 
 function App() {
     return (<>
-        <Information />
-        <Banner />
+        <Header />
         <nav>
             <Navbar />
         </nav>
         <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/coldsnacks" element={<ColdSnacks />} />
+            <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
+            <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
         </Routes>
     </>
     )
