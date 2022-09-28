@@ -15,15 +15,18 @@ function App() {
             <GlobalStyles />
             <div className='container'>
                 <Header />
+            </div>
+            <div className='container'>
                 <nav>
                     <Navbar />
                 </nav>
-                <Routes>
-                    <Route path="/" element={<Homepage />} />
-                    <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
-                    <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
-                </Routes>
             </div>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
+                <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
+            </Routes>
+
         </>
     )
 }

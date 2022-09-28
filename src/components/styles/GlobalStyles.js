@@ -1,9 +1,14 @@
 import { createGlobalStyle } from "styled-components";
+
+///Fonts
 import GilroyFontRegular from './fonts/Gilroy-Regular.woff';
 import GilroyFontBold from './fonts/Gilroy-Bold.woff';
 import GilroyFontMedium from './fonts/Gilroy-Medium.woff';
 import GilroyFontSemiBold from './fonts/Gilroy-SemiBold.woff';
 import GilroyFontSemiLight from './fonts/Gilroy-Light.woff';
+
+///images
+import BgImgBanner from '../img/menu-2.png';
 
 const GlobalStyles = createGlobalStyle`
   
@@ -78,6 +83,16 @@ a {
   text-transform: uppercase;
   color: #fff;
   font-size: 26px;
+}
+
+.banner{
+  background: url(${BgImgBanner}) no-repeat;
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    height: 557px;
+    image-rendering: high-quality;
+
 }
 `;
 
