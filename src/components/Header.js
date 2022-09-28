@@ -2,9 +2,11 @@ import React from 'react';
 
 function Header() {
     return (
-        <div>
-            Header
-        </div>
+        <header>
+          <a href='#!' className='logo'>
+            Logo
+          </a>
+        </header>
 
     )
 }
