@@ -6,7 +6,7 @@ import ProductsColdSnacks from './ProductsColdSnacks';
 function Homepage() {
     return (
         <>
-            <section>
+            <div className='homepage'>
                 <Banner />
                 <div className='container'>
                     <nav>
@@ -14,7 +14,7 @@ function Homepage() {
                     </nav>
                 </div>
                 <ProductsColdSnacks />
-            </section>
+            </div>
         </>
 
     )

@@ -15,15 +15,24 @@ function ProductsColdSnacks() {
         weight: 235
     }
     function ProductColdSnacks({ productColdSnack }) {
-        const { thumbnail, title, description } = productColdSnack;
+        const { thumbnail, title, description, price } = productColdSnack;
         return (
             <div className='product-item'>
                 <Link to="/productscoldsnacks/1">
                     <div className='product-item__image'>
                         <img src={thumbnail} alt='menu 2' />
                     </div>
+                    <div className='product-top'>
                     <h4>{title}</h4>
+                    <span className='weight'>{price}</span>
+                    </div>
+                
+
                     <p>{description}</p>
+                    <div className='product-bottom'>
+                        <span className='price'>{price}$</span>
+                        <button class="btn-cart">Add to cart</button>
+                    </div>
                 </Link>
             </div>
         )
@@ -36,7 +45,6 @@ function ProductsColdSnacks() {
                     {Array.from({ length: 8 }, () => productColdSnack).map((productColdSnack, i) => (
                         <ProductColdSnacks key={i} productColdSnack={productColdSnack} />
                     ))}
-
                 </div>
             </section>
             <Link to="/productscoldsnacks/1">productscoldsnacks 1</Link>
