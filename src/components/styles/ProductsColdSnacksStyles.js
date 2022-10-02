@@ -5,6 +5,7 @@ const ProductsColdSnacksStyles = createGlobalStyle`
 .products-items {
  display: flex;
  flex-wrap: wrap;
+ overflow: hidden;
 }
 .products-coldsnacks .product-item{
   width: 325px;
@@ -50,6 +51,12 @@ color: #fff;
 }
 
 
+.slick-track
+{
+  max-width: 100vw;
+display: flex;
+
+}
 `;
 
 export default ProductsColdSnacksStyles;
