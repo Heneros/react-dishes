@@ -10,6 +10,9 @@ const ProductsColdSnacksStyles = createGlobalStyle`
 .products-coldsnacks .product-item{
   width: 325px;
   margin: 0 20px;
+  background:#494544;
+box-shadow: 0px 30px 45px rgba(43, 40, 40, 0.6);
+border-radius: 10px;
 }
 .products-coldsnacks .product-item h4{
   color: #fff;
@@ -21,8 +24,8 @@ const ProductsColdSnacksStyles = createGlobalStyle`
     max-width: 267px;
 }
 .products-coldsnacks .product-item img{
-    height: 325px;
-    object-fit: cover;
+    /* height: 325px;
+    object-fit: cover; */
 }
 .product-bottom{
  display: flex;
@@ -56,6 +59,9 @@ color: #fff;
   max-width: 100vw;
 display: flex;
 
+}
+.slick-track > div{
+  margin-right: 20px;
 }
 `;
 
