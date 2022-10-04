@@ -37,7 +37,7 @@ function ProductsColdSnacks() {
                 <p>{description}</p>
                 <div className='product-bottom'>
                     <span className='price'>{price}$</span>
-                    <button class="btn-cart">Add to cart</button>
+                    <button className="btn-cart">Add to cart</button>
                 </div>
                 {/* </Link> */}
             </div>
