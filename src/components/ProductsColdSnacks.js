@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import ProductsColdSnacksStyles from './styles/ProductsColdSnacksStyles';
+import { useQuery } from '@apollo/client';
 
+import ProductsColdSnacksStyles from './styles/ProductsColdSnacksStyles';
+import { GET_PRODUCTS } from '../graphql/queries';
 import imageMenu from './img/menu-1-small.png';
 
 function ProductsColdSnacks() {
+    // const { data, loading, error } = useQuery(GET_PRODUCTS);
+    const { data, loading, error } = useQuery(GET_PRODUCTS);
+    console.log(data);
     const settings = {
-        // dots: true,
-
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 1
