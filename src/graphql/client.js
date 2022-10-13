@@ -1,5 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { HASURA_KEY, HASURA_URL } from "./keys";
+import mongoose from "mongoose";
+import { HASURA_KEY, HASURA_URL, MONGO_PASS } from "./keys";
+
+const MONGODB = `mongodb+srv://admin:${MONGO_PASS}@reactdishescluster.0rln0.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
