@@ -5,10 +5,15 @@ const { graphiql } = require('graphiql')
 require('dotenv').config();
 
 const schema = require('./schema/schema');
+const connectDB = require('./config/db');
+
 const port = process.env.PORT || 5000;
 const { graphqlHTTP } = require('express-graphql');
 
 const app = express();
+
+connectDB();
+
 app.use(cors());
 app.use('/graphql', graphqlHTTP({
     schema,
@@ -16,4 +21,4 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 
-app.listen(port, console.log(`Server running on port ${port}`));
+app.listen(port, console.log(`Server running on port ${port}`.cyan.underline.bold));
