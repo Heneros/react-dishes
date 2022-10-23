@@ -1,6 +1,9 @@
-const { dishes } = require('../DataDishes.js');
+///const { dishes } = require('../DataDishes.js');
 
-const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt, GraphQLSchema } = require('graphql');
+const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLList } = require('graphql');
+
+const Dishes = require('../models/Dishes');
+
 
 const DishesType = new GraphQLObjectType({
     name: 'Dishes',
@@ -17,13 +20,20 @@ const DishesType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
+        dishes: {
+            type: new GraphQLList(DishesType),
+            resolve(parent, args) {
+                return Dishes.find();
+            }
+        },
         dish: {
             type: DishesType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return dishes.find(dish => dish.id === args.id)
+                return Dishes.findById(args.id);
             }
-        }
+        },
+
     }
 });
 
