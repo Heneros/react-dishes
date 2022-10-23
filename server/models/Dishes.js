@@ -10,6 +10,9 @@ const DishesSchema = new mongoose.Schema({
     price: {
         type: String
     },
+    weight: {
+        type: String
+    },
 });
 
 

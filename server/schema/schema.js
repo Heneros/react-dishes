@@ -1,6 +1,6 @@
 ///const { dishes } = require('../DataDishes.js');
 
-const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLList } = require('graphql');
+const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLList, GraphQLNonNull } = require('graphql');
 
 const Dishes = require('../models/Dishes');
 
@@ -33,12 +33,38 @@ const RootQuery = new GraphQLObjectType({
                 return Dishes.findById(args.id);
             }
         },
-
     }
 });
 
+const mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addDish: {
+            type: DishesType,
+            args: {
+                name: { type: new GraphQLNonNull(GraphQLString) },
+                description: { type: new GraphQLNonNull(GraphQLString) },
+                price: { type: new GraphQLNonNull(GraphQLString) },
+                weight: { type: new GraphQLNonNull(GraphQLString) },
+            },
+            resolve(parent, args) {
+                const dish = new Dishes({
+                    name: args.name,
+                    description: args.description,
+                    price: args.price,
+                    weight: args.weight
+                });
+                return dish.save();
+            }
+        }
+    }
+})
+
+
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation
 });
 
 
