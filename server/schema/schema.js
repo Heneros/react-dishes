@@ -39,6 +39,7 @@ const RootQuery = new GraphQLObjectType({
 const mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
+        ///Add product
         addDish: {
             type: DishesType,
             args: {
@@ -55,6 +56,16 @@ const mutation = new GraphQLObjectType({
                     weight: args.weight
                 });
                 return dish.save();
+            },
+        },
+        ///Delete product
+        deleteDish: {
+            type: DishesType,
+            args: {
+                id: { type: new GraphQLNonNull(GraphQLID) },
+            },
+            resolve(parent, args) {
+                return Dishes.findByIdAndRemove(args.id);
             }
         }
     }
