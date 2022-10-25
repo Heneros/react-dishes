@@ -10,20 +10,19 @@ import ProductColdSnacks from './components/ProductColdSnacks';
 import GlobalStyles from './components/styles/GlobalStyles';
 
 function App() {
-    return (
-        <>
-            <GlobalStyles />
-            <div className='container'>
-                <Header />
-            </div>
-            <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
-                <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
-            </Routes>
-
-        </>
-    )
+  return (
+    <div>
+      <GlobalStyles />
+      <div className='container'>
+        <Header />
+      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
+        <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
+      </Routes>
+    </div>
+  )
 }
 
 export default App;
