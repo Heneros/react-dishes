@@ -5,7 +5,7 @@ function ProductColdSnacks() {
     const { id } = useParams();
     return (
         <>
-            ProductColdSnacks {id}
+            ProductColdSnack {id}
         </>
 
     )

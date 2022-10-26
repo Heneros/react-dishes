@@ -1,22 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const GET_PRODUCTS = gql`
-    #  query getProducts {
-    #     products{
-    #         id
-    #         name
-    #         weight
-    #         price
-    #         description
-    #     }
-    #  }
-    query MyQuery {
-  products_products {
-    id
-    name
-    price
+export const GET_DISHES = gql`
+ query getDishes{
+  dishes{
+    name, 
+    description,
     weight
-    description
+    price
   }
-}
+ }
 `;
