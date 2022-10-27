@@ -6,7 +6,7 @@ import Homepage from './components/Homepage';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import ProductsColdSnacks from './components/ProductsColdSnacks';
-import ProductColdSnacks from './components/ProductColdSnacks';
+// import ProductColdSnacks from './components/ProductColdSnacks';
 import GlobalStyles from './components/styles/GlobalStyles';
 
 
@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
-          <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} />
+          {/* <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} /> */}
         </Routes>
       </ApolloProvider>
     </>
