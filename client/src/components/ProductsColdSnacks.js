@@ -7,6 +7,7 @@ import ProductsColdSnacksStyles from './styles/ProductsColdSnacksStyles';
 import { GET_DISHES } from '../graphql/queries';
 import imageMenu from './img/menu-1-small.png';
 import ProductColdSnack from './ProductColdSnack';
+import Spinner from './Spinner';
 
 function ProductsColdSnacks() {
 
@@ -27,26 +28,22 @@ function ProductsColdSnacks() {
         price: 315,
         weight: 235
     }
-    if (loading) { return <p>Loading...</p> }
+    if (loading) { return <Spinner /> }
     if (error) { return <p>Error</p> }
 
 
 
     return (
         <>
+         <Spinner />
             <ProductsColdSnacksStyles />
             <section className='products-coldsnacks'>
-
                 <div className='products-items'>
-                    {/* <Slider {...settings}>
-                        {Array.from({ length: 8 }, () => productColdSnack).map((productColdSnack, i) => (
-                            <ProductColdSnacks key={i} productColdSnack={productColdSnack} />
+                    <Slider {...settings}>
+                        {data.dishes.map(dish => (
+                            <ProductColdSnack key={dish.id} dish={dish} />
                         ))}
-                    </Slider> */}
-                    {data.dishes.map(dish => (
-                        <ProductColdSnack key={dish.id} dish={dish} />
-                    ))}
-
+                    </Slider>
                 </div>
             </section>
             <Link to="/productscoldsnacks/1">productscoldsnacks 1</Link>

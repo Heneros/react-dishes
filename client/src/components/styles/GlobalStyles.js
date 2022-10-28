@@ -60,6 +60,7 @@ body{
     padding: 0;
     font-family: 'Gilroy', Arial, Helvetica, sans-serif; 
     color: #fff;
+    
 }
 .container{
     max-width: 1325px;
@@ -93,6 +94,12 @@ a {
     height: 557px;
     image-rendering: high-quality;
 
+}
+.spinner-bg .ui.inverted.dimmer{
+background-color: transparent;
+}
+.ui.segment{
+background-color: transparent;
 }
 `;
 
