@@ -8,6 +8,7 @@ import { GET_DISHES } from '../graphql/queries';
 import imageMenu from './img/menu-1-small.png';
 import ProductColdSnack from './ProductColdSnack';
 import Spinner from './Spinner';
+import AddProductModal from './AddProductModal';
 
 function ProductsColdSnacks() {
 
@@ -35,8 +36,8 @@ function ProductsColdSnacks() {
 
     return (
         <>
-         <Spinner />
             <ProductsColdSnacksStyles />
+            <AddProductModal />
             <section className='products-coldsnacks'>
                 <div className='products-items'>
                     <Slider {...settings}>
