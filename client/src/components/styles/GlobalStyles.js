@@ -101,6 +101,9 @@ background-color: transparent;
 .ui.segment{
 background-color: transparent;
 }
+.modal-dialog{
+  color: #000000;
+}
 `;
 
 export default GlobalStyles;
