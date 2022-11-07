@@ -4,6 +4,14 @@ import { useMutation } from '@apollo/client';
 
 export default function AddProductModal() {
     const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState('');
+    const [weight, setWeight] = useState('');
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(name, description, weight);
+    }
 
     return (
         <>
@@ -20,7 +28,7 @@ export default function AddProductModal() {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form>
+                            <form onSubmit={onSubmit}>
                                 <div className='mb-3'>
                                     <label className='form-label'>
                                         Name
@@ -33,6 +41,46 @@ export default function AddProductModal() {
                                         onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
+                                <div className='mb-3'>
+                                    <label className='form-label'>
+                                        Description
+                                    </label>
+                                    <input
+                                        type='text'
+                                        className='form-control'
+                                        id='description'
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}
+                                    />
+                                </div>
+                                <div className='mb-3'>
+                                    <label className='form-label'>
+                                        Price
+                                    </label>
+                                    <input
+                                        type='text'
+                                        className='form-control'
+                                        id='price'
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}
+                                    />
+                                </div>
+                                <div className='mb-3'>
+                                    <label className='form-label'>
+                                        Weight
+                                    </label>
+                                    <input
+                                        type='text'
+                                        className='form-control'
+                                        id='weight'
+                                        value={weight}
+                                        onChange={(e) => setWeight(e.target.value)}
+                                    />
+                                </div>
+
+                                <button type='submit' data-bs-dismiss="modal" className='btn btn-secobdary'>
+                                    Submit
+                                </button>
                             </form>
                         </div>
                     </div>
