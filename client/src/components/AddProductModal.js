@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { ADD_DISH } from '../mutations/dishMutation';
+import { GET_DISHES } from '../graphql/queries';
 
 export default function AddProductModal() {
     const [name, setName] = useState('');
@@ -8,9 +10,32 @@ export default function AddProductModal() {
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
 
+    const [addDish] = useMutation(ADD_DISH, {
+        variables: { name, description, price, weight },
+        update(cache, { data: { addDish } }) {
+            const { dishes } = cache.readQuery({ query: GET_DISHES });
+            cache.writeQuery({
+                query: GET_DISHES,
+                data: { dishes: [...dishes, addDish] },
+            });
+        }
+    });
+
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(name, description, weight);
+
+
+        if (name === '' || description === '' || price === '' || weight === '') {
+            return alert("Empty fields");
+        }
+
+        addDish(name, description, price, weight);
+
+        setName('');
+        setDescription('');
+        setPrice('');
+        setWeight('');
     }
 
     return (

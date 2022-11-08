@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 
 import ProductsColdSnacksStyles from './styles/ProductsColdSnacksStyles';
 import { GET_DISHES } from '../graphql/queries';
-import imageMenu from './img/menu-1-small.png';
+// import imageMenu from './img/menu-1-small.png';
 import ProductColdSnack from './ProductColdSnack';
 import Spinner from './Spinner';
 import AddProductModal from './AddProductModal';
