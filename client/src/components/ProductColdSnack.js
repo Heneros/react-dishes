@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { DELETE_DISH } from '../mutations/dishMutation';
 import { GET_DISHES } from '../graphql/queries';
@@ -25,7 +24,6 @@ export default function ProductColdSnack({ dish }) {
                 <button className="btn-cart">Add to cart</button>
                 <button className="btn-cart" onClick={deleteDish}>Delete product</button>
             </div>
-
         </div>
 
     )

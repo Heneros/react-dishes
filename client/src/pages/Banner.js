@@ -5,7 +5,6 @@ function Banner() {
         <section className='banner'>
             <div className='bg-img'></div>
         </section>
-
     )
 }
 export default Banner;
