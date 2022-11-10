@@ -4,10 +4,14 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 import Homepage from './components/Homepage';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+import Header from './pages/Header';
 import ProductsColdSnacks from './components/ProductsColdSnacks';
-// import ProductColdSnacks from './components/ProductColdSnacks';
+
 import GlobalStyles from './components/styles/GlobalStyles';
+
+
+
+import ProductPage from './pages/ProductPage';
 
 
 const client = new ApolloClient({
@@ -25,8 +29,8 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/productscoldsnacks" element={<ProductsColdSnacks />} />
-          {/* <Route path="/productscoldsnacks/:id" element={<ProductColdSnacks />} /> */}
+          {/* <Route path="/product" element={<ProductsColdSnacks />} />
+          <Route path="/product/:id" element={<ProductPage />} /> */}
         </Routes>
       </ApolloProvider>
     </>

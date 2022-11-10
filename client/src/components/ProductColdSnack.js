@@ -11,12 +11,12 @@ export default function ProductColdSnack({ dish }) {
     });
 
 
-    const { name, description, price, weight } = dish;
-    const { id } = useParams();
+    const { id, name, description, price, weight } = dish;
+
     return (
         <div className='product-item'>
             <div className='product-top'>
-                <h4>{name}</h4>
+                <h4><a href={`/product/${id}`}>{name}</a></h4>
                 <span className='weight'>{weight}</span>
             </div>
             <p>{description}</p>

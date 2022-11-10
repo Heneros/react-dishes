@@ -102,7 +102,6 @@ export default function AddProductModal() {
                                         onChange={(e) => setWeight(e.target.value)}
                                     />
                                 </div>
-
                                 <button type='submit' data-bs-dismiss="modal" className='btn btn-secobdary'>
                                     Submit
                                 </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../pages/Header';
 import Banner from './Banner';
 import Navbar from './Navbar';
 import ProductsColdSnacks from './ProductsColdSnacks';
