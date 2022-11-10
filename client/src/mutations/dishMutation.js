@@ -27,4 +27,7 @@ mutation deleteDish($id: ID!){
 `;
 
 
+
+
+
 export { DELETE_DISH, ADD_DISH };

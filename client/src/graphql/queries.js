@@ -11,3 +11,16 @@ export const GET_DISHES = gql`
   }
  }
 `;
+
+
+export const GET_DISH = gql`
+  query getDish($id: ID!){
+    dish(id: $id){
+      id,
+      name,
+      description
+      price,
+      weight
+    }
+  }
+`;
