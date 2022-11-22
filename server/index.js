@@ -8,11 +8,15 @@ require('dotenv').config();
 
 const schema = require('./schema/schema');
 const connectDB = require('./config/db');
+const dishRouter = require("./routers/dish");
 
 const port = process.env.PORT || 5000;
 const { graphqlHTTP } = require('express-graphql');
 
 const app = express();
+
+app.use(express.json());
+app.use(dishRouter);
 
 connectDB();
 

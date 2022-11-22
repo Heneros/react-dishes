@@ -38,8 +38,21 @@ router.delete("/image/:id", async (req, res) => {
     try {
         const dish = await Dish.findOne({ _id: req.params.id });
         const publicId = dish.publicId;
+        await removeFromCloudinary(publicId);
+        const deleteImg = await Dish.updateOne(
+            { _id: req.params.id },
+            {
+                $set: {
+                    imageUrl: "",
+                    publicId: ""
+                },
+            }
+        );
+        res.status(200).send("User image was deleted");
     } catch (error) {
         res.status(400).send(error);
     }
 })
 
+
+module.exports = router;
