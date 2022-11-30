@@ -13,7 +13,6 @@ const DishesType = new GraphQLObjectType({
         description: { type: GraphQLString },
         price: { type: GraphQLString },
         weight: { type: GraphQLString },
-        imageUrl: { type: GraphQLString },
     })
 });
 
@@ -48,15 +47,13 @@ const mutation = new GraphQLObjectType({
                 description: { type: new GraphQLNonNull(GraphQLString) },
                 price: { type: new GraphQLNonNull(GraphQLString) },
                 weight: { type: new GraphQLNonNull(GraphQLString) },
-                imageUrl: { type: new GraphQLNonNull(GraphQLString) },
             },
             resolve(parent, args) {
                 const dish = new Dishes({
                     name: args.name,
                     description: args.description,
                     price: args.price,
-                    weight: args.weight,
-                    imageUrl: args.imageUrl
+                    weight: args.weight
                 });
                 return dish.save();
             },

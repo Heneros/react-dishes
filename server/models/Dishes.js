@@ -13,12 +13,6 @@ const DishesSchema = new mongoose.Schema({
     weight: {
         type: String
     },
-    imageUrl: {
-        type: String,
-    },
-    cloudinary_id: {
-        type: String,
-    },
 });
 
 
