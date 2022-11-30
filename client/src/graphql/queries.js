@@ -8,6 +8,7 @@ export const GET_DISHES = gql`
     description,
     weight
     price
+    imageUrl
   }
  }
 `;
@@ -21,6 +22,7 @@ export const GET_DISH = gql`
       description
       price,
       weight
+      imageUrl
     }
   }
 `;

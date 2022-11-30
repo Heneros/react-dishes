@@ -2,12 +2,13 @@ import { gql } from '@apollo/client';
 
 
 const ADD_DISH = gql`
- mutation addDish($name: String!, $description: String!, $weight: String!, $price: String!){
-    addDish(name: $name, description: $description,weight: $weight, price: $price ){
+ mutation addDish($name: String!, $description: String!, $weight: String!, $price: String!, $imageUrl: String!){
+    addDish(name: $name, description: $description,weight: $weight, price: $price, imageUrl: $imageUrl ){
         name,
         description,
         weight,
-        price
+        price,
+        imageUrl
     }
  }
 `;
@@ -21,7 +22,8 @@ mutation deleteDish($id: ID!){
     name,
     description
     price,
-    weight
+    weight,
+    imageUrl
     }
 }
 `;

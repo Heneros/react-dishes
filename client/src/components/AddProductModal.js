@@ -9,9 +9,10 @@ export default function AddProductModal() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
 
     const [addDish] = useMutation(ADD_DISH, {
-        variables: { name, description, price, weight },
+        variables: { name, description, price, weight, imageUrl },
         update(cache, { data: { addDish } }) {
             const { dishes } = cache.readQuery({ query: GET_DISHES });
             cache.writeQuery({
@@ -26,16 +27,17 @@ export default function AddProductModal() {
         console.log(name, description, weight);
 
 
-        if (name === '' || description === '' || price === '' || weight === '') {
+        if (name === '' || description === '' || price === '' || weight === '' || imageUrl === '') {
             return alert("Empty fields");
         }
 
-        addDish(name, description, price, weight);
+        addDish(name, description, price, weight, imageUrl);
 
         setName('');
         setDescription('');
         setPrice('');
         setWeight('');
+        setImageUrl('');
     }
 
     return (
@@ -100,6 +102,18 @@ export default function AddProductModal() {
                                         id='weight'
                                         value={weight}
                                         onChange={(e) => setWeight(e.target.value)}
+                                    />
+                                </div>
+                                <div className='mb-3'>
+                                    <label className='form-label'>
+                                        ImageUrl
+                                    </label>
+                                    <input
+                                        type='text'
+                                        className='form-control'
+                                        id='imageUrl'
+                                        value={imageUrl}
+                                        onChange={(e) => setImageUrl(e.target.value)}
                                     />
                                 </div>
                                 <button type='submit' data-bs-dismiss="modal" className='btn btn-secobdary'>

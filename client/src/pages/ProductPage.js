@@ -13,7 +13,7 @@ export default function ProductPage() {
     // const { name, description, weight, price } = data;
 
     if (loading) return <Spinner />;
-    if (error) return <p>Error;</p>
+    if (error) return <p>Error</p>
 
     return (
         <>
@@ -24,13 +24,10 @@ export default function ProductPage() {
 
                     <div className="product">
                         <div className="information">
-
                             <h1>{data.dish.name}</h1>
                             <span>{data.dish.price}</span>
                             <span>{data.dish.weight}</span>
                         </div>
-
-
                     </div>
                 </div>
             )}

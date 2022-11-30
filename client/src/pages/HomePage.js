@@ -9,13 +9,9 @@ import ProductsColdSnacks from '../components/ProductsColdSnacks';
 function Homepage() {
     return (
         <>
-
             <div className='homepage'>
-           
-                    <Header />
-        
+                <Header />
                 <Banner />
-
                 <div className='container'>
                     <nav>
                         <Navbar />

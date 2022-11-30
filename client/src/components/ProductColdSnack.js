@@ -10,10 +10,11 @@ export default function ProductColdSnack({ dish }) {
     });
 
 
-    const { id, name, description, price, weight } = dish;
+    const { id, name, description, price, weight, imageUrl } = dish;
 
     return (
         <div className='product-item'>
+            <img src={imageUrl} alt="" />
             <div className='product-top'>
                 <h4><a href={`/product/${id}`}>{name}</a></h4>
                 <span className='weight'>{weight}</span>
